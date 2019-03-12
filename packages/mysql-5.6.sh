@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install a custom MySQL 5.7 version - https://www.mysql.com
+# Install a custom MySQL 5.6 version - https://www.mysql.com
 #
 # To run this script on Codeship, add the following
 # command to your project's setup commands:
@@ -10,16 +10,10 @@
 # * MYSQL_VERSION
 # * MYSQL_PORT
 #
-MYSQL_VERSION=${MYSQL_VERSION:="5.7.17"}
+MYSQL_VERSION=${MYSQL_VERSION:="5.6.43"}
 MYSQL_PORT=${MYSQL_PORT:="3307"}
 
-# If the MySQL version is 5.7.18 or less
-if [ ${MYSQL_VERSION:4:2} -le 18 ]
-then
-  MYSQL_DL_URL="https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-${MYSQL_VERSION}-linux-glibc2.5-x86_64.tar.gz"
-else
-  MYSQL_DL_URL="https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-${MYSQL_VERSION}-linux-glibc2.12-x86_64.tar.gz"
-fi
+MYSQL_DL_URL="https://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-${MYSQL_VERSION}-linux-glibc2.12-x86_64.tar.gz"
 
 set -e
 MYSQL_DIR=${MYSQL_DIR:=$HOME/mysql-$MYSQL_VERSION}
