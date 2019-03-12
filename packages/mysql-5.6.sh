@@ -21,12 +21,12 @@ CACHED_DOWNLOAD="${HOME}/cache/mysql-${MYSQL_VERSION}.tar.gz"
 
 sudo mkdir -p "${MYSQL_DIR}"
 sudo wget --continue --output-document "${CACHED_DOWNLOAD}" "${MYSQL_DL_URL}"
-tar -xaf "${CACHED_DOWNLOAD}" --strip-components=1 --directory "${MYSQL_DIR}"
+sudo tar -xaf "${CACHED_DOWNLOAD}" --strip-components=1 --directory "${MYSQL_DIR}"
 sudo mkdir -p "${MYSQL_DIR}/data"
 sudo mkdir -p "${MYSQL_DIR}/socket"
 sudo mkdir -p "${MYSQL_DIR}/log"
 
-echo "#
+sudo echo "#
 # The MySQL 5.6 database server configuration file.
 #
 [client]
